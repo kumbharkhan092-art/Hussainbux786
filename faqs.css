@@ -1,0 +1,255 @@
+/* ===== Global Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    color: #212121;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== Navigation Bar ===== */
+.navbar {
+    background-color: #0D1B2A;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.logo-bingo {
+    color: #ffffff;
+}
+
+.logo-earn {
+    color: #1976D2;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #1976D2;
+}
+
+/* ===== Hero Section ===== */
+.faq-hero {
+    background: linear-gradient(135deg, #0D1B2A 0%, #1976D2 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 140px 20px 80px;
+    margin-top: 60px;
+}
+
+.faq-hero h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.faq-hero p {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+/* ===== FAQs Section ===== */
+.faqs-section {
+    padding: 80px 20px;
+    background-color: #f8f9fa;
+}
+
+.faqs-section .container {
+    max-width: 900px;
+}
+
+/* FAQ Item */
+.faq-item {
+    background: #ffffff;
+    border: 2px solid #E3F2FD;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: #1976D2;
+    box-shadow: 0 5px 20px rgba(25, 118, 210, 0.15);
+}
+
+/* FAQ Question */
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #E3F2FD;
+}
+
+.faq-question h3 {
+    font-size: 18px;
+    color: #0D1B2A;
+    font-weight: 600;
+    margin: 0;
+}
+
+.faq-icon {
+    font-size: 28px;
+    color: #1976D2;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+}
+
+/* FAQ Answer */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.faq-answer p {
+    padding: 0 30px;
+    color: #555;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+/* Active State (when clicked - you can toggle this with JavaScript, but keeping pure CSS for now) */
+.faq-item:target .faq-answer,
+.faq-item:focus-within .faq-answer {
+    max-height: 300px;
+    padding: 20px 0;
+}
+
+.faq-item:target .faq-icon,
+.faq-item:focus-within .faq-icon {
+    transform: rotate(45deg);
+}
+
+/* Alternative: Using checkbox hack for pure CSS accordion */
+.faq-item input[type="checkbox"] {
+    display: none;
+}
+
+.faq-item input[type="checkbox"]:checked ~ .faq-answer {
+    max-height: 300px;
+    padding: 20px 0;
+}
+
+.faq-item input[type="checkbox"]:checked ~ .faq-question .faq-icon {
+    transform: rotate(45deg);
+}
+
+/* ===== Contact Section ===== */
+.contact-section {
+    background: linear-gradient(135deg, #1976D2, #0D1B2A);
+    color: #ffffff;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.contact-section h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.contact-section p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.btn-contact {
+    display: inline-block;
+    background: #ffffff;
+    color: #1976D2;
+    padding: 15px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.btn-contact:hover {
+    background: #E3F2FD;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+}
+
+/* ===== Footer ===== */
+.footer {
+    background-color: #0D1B2A;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .faq-hero h1 {
+        font-size: 32px;
+    }
+
+    .faq-question {
+        padding: 20px;
+    }
+
+    .faq-question h3 {
+        font-size: 16px;
+    }
+
+    .faq-answer p {
+        padding: 0 20px;
+        font-size: 14px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        font-size: 14px;
+    }
+}
